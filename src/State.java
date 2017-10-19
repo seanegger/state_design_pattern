@@ -1,4 +1,6 @@
 public interface State {
 
-    public void doAction(Server server);
+    public void init(Server server);
+
+    public void doAction();
 }

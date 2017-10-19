@@ -1,14 +1,25 @@
 public class ServerDemo {
 
-    // Create the Server
-    Server server = new Server();
+    public static void main(String args[])
+    {
+        // Create the Server
+        Server server = new Server();
 
-    // Create the state
-    StartupState startupState = new StartupState();
-    ReceivingState receivingState = new ReceivingState();
-    SendingState sendingState = new SendingState();
-    ShutdownState shutdownState = new ShutdownState();
+        // Create the state
+        StartupState start = new StartupState();
+        ReceivingState receive = new ReceivingState();
+        SendingState send = new SendingState();
+        ShutdownState shutdown = new ShutdownState();
 
-    //Use the States
-    startUpState.doAction()
+        //Use the States
+        start.init(server);
+        server.doServerStuff();
+        receive.init(server);
+        server.doServerStuff();
+        send.init(server);
+        server.doServerStuff();
+        shutdown.init(server);
+        server.doServerStuff();
+    }
+
 }

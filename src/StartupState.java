@@ -1,8 +1,15 @@
 public class StartupState implements State {
 
-    public void doAction(Server server)
+    @Override
+    public void init(Server server)
     {
         System.out.println("Starting up server.");
         server.setState(this);
+    }
+
+    @Override
+    public void doAction()
+    {
+        System.out.println("Starting up...");
     }
 }
